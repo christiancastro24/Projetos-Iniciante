@@ -5,6 +5,13 @@ export const Home = () => {
     const history = useHistory();
 
     const pathRelative = (path) => history.push(path)
+    
+    gtag('config', 'G-1MJESMFXHD')
+    
+    gtag('event', 'aaa', {
+        'event_category' : 'bbb',
+        'event_label' : 'ccc'
+      });
 
     return (
         <div>
