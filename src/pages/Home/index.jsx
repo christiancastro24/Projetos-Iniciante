@@ -8,29 +8,6 @@ export const Home = () => {
 
     const pathRelative = (path) => history.push(path)
     
-    gtag('config', 'G-1MJESMFXHD')
-    
-    gtag('event', 'aaa', {
-        'event_category' : 'bbb',
-        'event_label' : 'ccc'
-      });
-
-
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'cliques',
-        eventAction: 'click',
-        eventLabel: 'IMC'
-      });
-
-      function handleOutboundLinkClicks(event) {
-        ga('send', 'event', {
-          eventCategory: 'Outbound Link',
-          eventAction: 'click',
-          eventLabel: event.target.href
-        });
-      }
-
     //  Desativar a visualização da página
     //   gtag('config', 'G-1MJESMFXHDD', {
     //     send_page_view: false
@@ -47,6 +24,7 @@ export const Home = () => {
             <button onClick={() => pathRelative("/SayHello")}>Olá em seu país</button>
             <button onClick={() => pathRelative("/todoList")}>Lista de tarefas</button>
             <button onClick={() => pathRelative("/trueEfalse")}>Comparações em JS</button>
+            <a href="https://google.com.br" alt="google" />
         </div>
     )
 }
