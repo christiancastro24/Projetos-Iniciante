@@ -24,7 +24,7 @@ export const Home = () => {
             <button onClick={() => pathRelative("/SayHello")}>Olá em seu país</button>
             <button onClick={() => pathRelative("/todoList")}>Lista de tarefas</button>
             <button onClick={() => pathRelative("/trueEfalse")}>Comparações em JS</button>
-            <a href="https://google.com.br" alt="google" />
+            <a href="https://google.com.br" alt="google">TESTE</a>
         </div>
     )
 }
