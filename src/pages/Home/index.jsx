@@ -1,19 +1,9 @@
 import { useHistory } from "react-router"
-<>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MJESMFXHDD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){window.dataLayer.push(arguments)}
-  gtag('js', new Date());
 
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
-</>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MJESMFXHDD"></script>
 
 export const Home = () => {
-
-    
-
+ 
     const history = useHistory();
 
     const pathRelative = (path) => history.push(path)
@@ -25,10 +15,31 @@ export const Home = () => {
         'event_label' : 'ccc'
       });
 
+
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'cliques',
+        eventAction: 'click',
+        eventLabel: 'IMC'
+      });
+
+      function handleOutboundLinkClicks(event) {
+        ga('send', 'event', {
+          eventCategory: 'Outbound Link',
+          eventAction: 'click',
+          eventLabel: event.target.href
+        });
+      }
+
+    //  Desativar a visualização da página
+    //   gtag('config', 'G-1MJESMFXHDD', {
+    //     send_page_view: false
+    //   });
+
     return (
         <div>
             <h1>Home</h1>
-            <button onClick={() => pathRelative("/findYourBook")}>Encontre seu livro</button>
+            <button onClick={() => {pathRelative("/findYourBook"); handleOutboundLinkClicks()}}>Encontre seu livro</button>
             <button onClick={() => pathRelative("/generatePhrase")}>Gerador de Frases</button>
             <button onClick={() => pathRelative("/generateRandomMeal")}>Gerador de refeições</button>
             <button onClick={() => pathRelative("/IMC")}>Calculadora IMC</button>
