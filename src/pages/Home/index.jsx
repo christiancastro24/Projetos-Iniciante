@@ -16,7 +16,7 @@ export const Home = () => {
     return (
         <div>
             <h1>Home</h1>
-            <button onClick={() => {pathRelative("/findYourBook"); handleOutboundLinkClicks()}}>Encontre seu livro</button>
+            <button onClick={() => {pathRelative("/findYourBook")}}>Encontre seu livroo</button>
             <button onClick={() => pathRelative("/generatePhrase")}>Gerador de Frases</button>
             <button onClick={() => pathRelative("/generateRandomMeal")}>Gerador de refeições</button>
             <button onClick={() => pathRelative("/IMC")}>Calculadora IMC</button>
